@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libscreencap", "libscreencap\libscreencap.vcproj", "{64550ECE-BE2E-42FA-851A-9553461749BE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScreenCapTest", "ScreenCapTest\ScreenCapTest.vcproj", "{5A4C3A28-0000-4AF0-98E7-BAE8365C8604}"
+	ProjectSection(ProjectDependencies) = postProject
+		{64550ECE-BE2E-42FA-851A-9553461749BE} = {64550ECE-BE2E-42FA-851A-9553461749BE}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64550ECE-BE2E-42FA-851A-9553461749BE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{64550ECE-BE2E-42FA-851A-9553461749BE}.Debug|Win32.Build.0 = Debug|Win32
+		{64550ECE-BE2E-42FA-851A-9553461749BE}.Release|Win32.ActiveCfg = Release|Win32
+		{64550ECE-BE2E-42FA-851A-9553461749BE}.Release|Win32.Build.0 = Release|Win32
+		{5A4C3A28-0000-4AF0-98E7-BAE8365C8604}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5A4C3A28-0000-4AF0-98E7-BAE8365C8604}.Debug|Win32.Build.0 = Debug|Win32
+		{5A4C3A28-0000-4AF0-98E7-BAE8365C8604}.Release|Win32.ActiveCfg = Release|Win32
+		{5A4C3A28-0000-4AF0-98E7-BAE8365C8604}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
