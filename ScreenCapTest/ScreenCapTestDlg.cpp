@@ -1,4 +1,3 @@
-
 // ScreenCapTestDlg.cpp : implementation file
 //
 
@@ -22,14 +21,14 @@ ScreenCapTestDlg::ScreenCapTestDlg(CWnd* pParent /*=NULL*/)
 void ScreenCapTestDlg::DoDataExchange(CDataExchange* pDX)
 {
 	DDX_Control(pDX, IDC_CAPTURETYPE, m_cmbType);
-  DDX_Control(pDX, IDC_SPINDELAY,   m_spinDelay);
+	DDX_Control(pDX, IDC_SPINDELAY,   m_spinDelay);
 }
 
 BEGIN_MESSAGE_MAP(ScreenCapTestDlg, CDialog)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	//}}AFX_MSG_MAP
-  ON_BN_CLICKED(IDC_CAPTURE, &ScreenCapTestDlg::OnBnClickedCapture)
+	ON_BN_CLICKED(IDC_CAPTURE, &ScreenCapTestDlg::OnBnClickedCapture)
 END_MESSAGE_MAP()
 
 
@@ -45,11 +44,11 @@ BOOL ScreenCapTestDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// Extra initialization
-  m_cmbType.AddString(L"Fullscreen");
-  m_cmbType.AddString(L"Current Window");
-  m_cmbType.SetCurSel(0);
+	m_cmbType.AddString(L"Fullscreen");
+	m_cmbType.AddString(L"Current Window");
+	m_cmbType.SetCurSel(0);
 
-  m_spinDelay.SetRange(0, 10);
+	m_spinDelay.SetRange(0, 10);
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -93,21 +92,21 @@ HCURSOR ScreenCapTestDlg::OnQueryDragIcon()
 
 void ScreenCapTestDlg::OnBnClickedCapture()
 {
-  ScreenCap::CaptureType Type = static_cast<ScreenCap::CaptureType>(m_cmbType.GetCurSel());
+	ScreenCap::CaptureType Type = static_cast<ScreenCap::CaptureType>(m_cmbType.GetCurSel());
 
-  int nDelay = (m_spinDelay.GetPos() * 1000);
+	int nDelay = (m_spinDelay.GetPos() * 1000);
 
-  ScreenCap::DoCapture(Type, nDelay, boost::bind(&ScreenCapTestDlg::CaptureCallback, this, _1, _2)); 
+	ScreenCap::DoCapture(Type, nDelay, boost::bind(&ScreenCapTestDlg::CaptureCallback, this, _1, _2)); 
 }
 
 void ScreenCapTestDlg::CaptureCallback(ScreenCap::ErrorType err, CString strFilePath)
 {
-  if (err == ScreenCap::ErrorNone)
-  {
-    ShellExecute(NULL, L"open", strFilePath, NULL, NULL, SW_SHOWNORMAL);
-  } 
-  else if (err == ScreenCap::ErrorCaptureFailed)
-  {
-    MessageBox(L"An error occurred while trying to capture your screen. This is typically due to insufficient system resources.", NULL, MB_ICONSTOP);
-  }
+	if (err == ScreenCap::ErrorNone)
+	{
+		ShellExecute(NULL, L"open", strFilePath, NULL, NULL, SW_SHOWNORMAL);
+	} 
+	else if (err == ScreenCap::ErrorCaptureFailed)
+	{
+		MessageBox(L"An error occurred while trying to capture your screen. This is typically due to insufficient system resources.", NULL, MB_ICONSTOP);
+  	}
 } 
