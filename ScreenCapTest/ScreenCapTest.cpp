@@ -60,7 +60,7 @@ BOOL ScreenCapTestApp::InitInstance()
 	// such as the name of your company or organization
 	SetRegistryKey(_T("Local AppWizard-Generated Applications"));
 
-  ScreenCap::Initialize();
+	ScreenCap::Initialize();
 
 	ScreenCapTestDlg dlg;
 	m_pMainWnd = &dlg;
