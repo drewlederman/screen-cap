@@ -1,4 +1,3 @@
-
 // ScreenCapTestDlg.h : header file
 //
 
@@ -17,15 +16,15 @@ public:
 // Dialog Data
 	enum { IDD = IDD_SCREENCAPTEST_DIALOG };
 
-	protected:
+protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
 
-  void CaptureCallback(ScreenCap::ErrorType err, CString strFilePath);
+	void CaptureCallback(ScreenCap::ErrorType err, CString strFilePath);
 
 // Implementation
 protected:
-  CComboBox m_cmbType;
-  CSpinButtonCtrl m_spinDelay;
+	CComboBox m_cmbType;
+	CSpinButtonCtrl m_spinDelay;
 
 	HICON m_hIcon;
 
@@ -35,5 +34,5 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
-  afx_msg void OnBnClickedCapture();
+  	afx_msg void OnBnClickedCapture();
 };
