@@ -108,5 +108,5 @@ void ScreenCapTestDlg::CaptureCallback(ScreenCap::ErrorType err, CString strFile
 	else if (err == ScreenCap::ErrorCaptureFailed)
 	{
 		MessageBox(L"An error occurred while trying to capture your screen. This is typically due to insufficient system resources.", NULL, MB_ICONSTOP);
-  	}
+	}
 } 
