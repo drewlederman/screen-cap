@@ -1,4 +1,3 @@
-
 // ScreenCapTest.cpp : Defines the class behaviors for the application.
 //
 
@@ -84,9 +83,9 @@ BOOL ScreenCapTestApp::InitInstance()
 
 int ScreenCapTestApp::ExitInstance()
 {
-  // TODO: Add your specialized code here and/or call the base class
+	// TODO: Add your specialized code here and/or call the base class
 
-  ScreenCap::Uninitialize();
+	ScreenCap::Uninitialize();
 
-  return CWinAppEx::ExitInstance();
+	return CWinAppEx::ExitInstance();
 }
